@@ -57,8 +57,9 @@ if "stock_details" not in st.session_state:
 if "from_date" not in st.session_state:
     st.session_state.from_date = datetime.strptime('2023-01-01', "%Y-%m-%d")
 
+today = datetime.today().date().strftime("%Y-%m-%d")
 if "to_date" not in st.session_state:
-    st.session_state.to_date = datetime.strptime('2025-01-31', "%Y-%m-%d")
+    st.session_state.to_date = datetime.strptime(today, "%Y-%m-%d")
 
 st.write("This is a streamlit-based stock market analysis dashboard that provides real-time data visualization, performance metrics, and price forecasting using advanced machine learning models like ARIMA, XGBoost, and LSTM.")
 st.write("You can select multiple stocks, view historical price trends, compare performance metrics, and predict future stock prices.")
