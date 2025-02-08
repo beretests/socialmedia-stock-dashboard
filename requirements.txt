@@ -8,7 +8,6 @@ ratelimit
 statsmodels
 xgboost
 polygon
-futures
 tensorflow
 tensorflow.keras
 ta
