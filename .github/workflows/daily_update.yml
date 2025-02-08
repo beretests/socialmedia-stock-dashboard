@@ -1,0 +1,15 @@
+# name: Daily Update
+
+# on:
+#   schedule:
+#     - cron: '0 0 * * *'  # Runs at 00:00 UTC every day
+
+# jobs:
+#   trigger_redeploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Trigger Streamlit Cloud Redeployment
+#       run: |
+#         curl -X POST https://api.streamlit.io/v1/apps/beretests/social_media_stocks_dashboard/redeploy \
+#         -H "Authorization: Bearer ${{ secrets.STREAMLIT_API_KEY }}"

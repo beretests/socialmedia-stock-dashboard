@@ -1,2 +1,14 @@
 streamlit
 pandas
+polygon-api-client 
+pandas 
+numpy
+plotly
+ratelimit
+statsmodels
+xgboost
+polygon
+futures
+tensorflow
+tensorflow.keras
+ta
