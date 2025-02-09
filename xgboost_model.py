@@ -311,7 +311,7 @@ def lstm_predict_prices(model, x_test, scaler, last_n_days, future_n_days, lookb
     return predictions, future_predictions
 
 
-def plot_lstm_predictions(train, valid, future_predictions):
+def plot_lstm_predictions(train, valid, future_predictions, future_n_days):
     fig = make_subplots(specs=[[{"secondary_y": True}]])
 
     fig.add_trace(go.Scatter(x=train.index, y=train['c'], name='Train'))
@@ -322,7 +322,7 @@ def plot_lstm_predictions(train, valid, future_predictions):
                   y=future_predictions['Close'], name='Future', line=dict(dash='dash', color='red')))
 
     fig.update_layout(
-        title='Model',
+        title=f'Actual and Forecasted Prices for Next {future_n_days} Days using LSTM',
         xaxis_title='Date',
         yaxis_title='Close Price USD ($)',
         legend=dict(orientation='h', yanchor='bottom',

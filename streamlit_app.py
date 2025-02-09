@@ -656,7 +656,7 @@ with tabs[7]:
                     display_model_metrics("LSTM Model", lstm_metrics)
 
                     plot_lstm_predictions(
-                        lstm_train, lstm_valid, lstm_future_predictions)
+                        lstm_train, lstm_valid, lstm_future_predictions, future_n_days)
 
                 except ValueError as e:
                     st.error(f"Error in preprocessing data: {e}")
