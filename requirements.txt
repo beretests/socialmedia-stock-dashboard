@@ -12,3 +12,4 @@ tensorflow
 tensorflow.keras
 ta
 polygon
+scikit-learn
