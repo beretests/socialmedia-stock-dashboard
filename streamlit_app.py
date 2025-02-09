@@ -639,8 +639,6 @@ with tabs[7]:
                     x_train, x_test, y_train = create_lstm_dataset(
                         lstm_processed_data, training_data_len, xgb_lookback)
 
-                    # lstm_model = build_lstm_model(x_train, y_train, lstm_epochs)
-
                     lstm_last_n_days = lstm_processed_data[-xgb_lookback:]
 
                     lstm_model, lstm_exec_time = build_lstm_model(
@@ -653,12 +651,12 @@ with tabs[7]:
 
                     lstm_valid['Predictions'] = lstm_predictions
 
-                    plot_lstm_predictions(
-                        lstm_train, lstm_valid, lstm_future_predictions)
-
                     lstm_metrics = evaluate_model_metrics(
                         y_test, lstm_valid['Predictions'])
                     display_model_metrics("LSTM Model", lstm_metrics)
+
+                    plot_lstm_predictions(
+                        lstm_train, lstm_valid, lstm_future_predictions)
 
                 except ValueError as e:
                     st.error(f"Error in preprocessing data: {e}")

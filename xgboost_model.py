@@ -315,7 +315,7 @@ def plot_lstm_predictions(train, valid, future_predictions):
     fig = make_subplots(specs=[[{"secondary_y": True}]])
 
     fig.add_trace(go.Scatter(x=train.index, y=train['c'], name='Train'))
-    fig.add_trace(go.Scatter(x=valid.index, y=valid['c'], name='Val'))
+    fig.add_trace(go.Scatter(x=valid.index, y=valid['c'], name='Valid'))
     fig.add_trace(go.Scatter(
         x=valid.index, y=valid['Predictions'], name='Predictions'))
     fig.add_trace(go.Scatter(x=future_predictions.index,
