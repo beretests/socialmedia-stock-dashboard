@@ -1,5 +1,5 @@
 import streamlit as st
-from prophet import Prophet
+# from prophet import Prophet
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
@@ -87,15 +87,15 @@ def display_metrics(model_name, metrics, min_metrics):
         )
 
 
-def prophet_forecast(data, days=30):
-    forecasts = {}
-    for symbol in data['symbol'].unique():
-        symbol_data = data[data['symbol'] == symbol].reset_index()
-        symbol_data = symbol_data.rename(
-            columns={'timestamp': 'ds', 'close': 'y'})
-        model = Prophet()
-        model.fit(symbol_data)
-        future = model.make_future_dataframe(periods=days)
-        forecast = model.predict(future)
-        forecasts[symbol] = forecast
-    return forecasts
+# def prophet_forecast(data, days=30):
+#     forecasts = {}
+#     for symbol in data['symbol'].unique():
+#         symbol_data = data[data['symbol'] == symbol].reset_index()
+#         symbol_data = symbol_data.rename(
+#             columns={'timestamp': 'ds', 'close': 'y'})
+#         model = Prophet()
+#         model.fit(symbol_data)
+#         future = model.make_future_dataframe(periods=days)
+#         forecast = model.predict(future)
+#         forecasts[symbol] = forecast
+#     return forecasts
