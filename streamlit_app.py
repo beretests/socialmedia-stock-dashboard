@@ -639,7 +639,7 @@ with tabs[7]:
                     x_train, x_test, y_train = create_lstm_dataset(
                         lstm_processed_data, training_data_len, xgb_lookback)
 
-                    lstm_model = build_lstm_model(x_train, y_train)
+                    # lstm_model = build_lstm_model(x_train, y_train, lstm_epochs)
 
                     lstm_last_n_days = lstm_processed_data[-xgb_lookback:]
 
