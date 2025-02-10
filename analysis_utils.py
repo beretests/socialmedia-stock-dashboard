@@ -104,7 +104,7 @@ def fetch_stock_details(symbols, api_key):
     return results
 
 
-def create_comparative_line_plot(data_dict, events=None):
+def create_comparative_line_plot(data_dict, events):
     fig = go.Figure()
 
     for symbol, data in data_dict.items():
