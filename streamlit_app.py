@@ -152,7 +152,10 @@ with tabs[0]:
         )
     stock_details_df = pd.DataFrame(df_stock_details)
     stock_details_df.set_index('ticker', inplace=True)
-    st.table(stock_details_df)
+
+    number_of_rows = len(stock_details_df)
+    height = (number_of_rows + 1) * 35 + 3
+    st.dataframe(stock_details_df, height=height, use_container_width=True)
 
 ######## -------HISTORICAL DATA----------########
 
